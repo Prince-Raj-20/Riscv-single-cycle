@@ -1,0 +1,17 @@
+00a00093  // 0x00: addi x1, x0, 10        ; x1 = 10
+01400113  // 0x04: addi x2, x0, 20        ; x2 = 20
+01e00193  // 0x08: addi x3, x0, 30        ; x3 = 30
+003081b3  // 0x0C: add  x3, x1, x3        ; x3 = x1 + x3 = 10 + 30 = 40
+40210233  // 0x10: sub  x4, x2, x2        ; x4 = 0
+0021a2b3  // 0x14: slt  x5, x3, x2        ; x5 = (40 < 20) = 0
+0030a333  // 0x18: slt  x6, x1, x3        ; x6 = (10 < 40) = 1
+01c00313  // 0x1C: addi x6, x0, 28        ; overwrite x6 = 28
+00f00413  // 0x20: addi x8, x0, 15        ; x8 = 15
+408384b3  // 0x24: sub  x9, x7, x8        ; x9 = ? - 15 (test zero regs)
+00f46513  // 0x28: ori  x10, x8, 15       ; x10 = 15 | 15 = 15
+00f47613  // 0x2C: andi x12, x8, 15       ; x12 = 15 & 15 = 15
+00a4a693  // 0x30: slti x13, x9, 10       ; x13 = (x9 < 10)
+0080006f  // 0x34: jal x0, 8              ; skip next 2
+00100513  // 0x38: addi x10, x0, 1        ; skipped
+00200593  // 0x3C: addi x11, x0, 2        ; skipped
+00c00613  // 0x40: addi x12, x0, 12       ; executed
